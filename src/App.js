@@ -5,7 +5,7 @@ import Sign from './components/Sign';
 import Title from './components/Title';
 import Contact from './components/Contact';
 import {
-  BrowserRouter, Route,
+  HashRouter as Router, Route,
   Routes,
 } from "react-router-dom";
 import React, { useState } from 'react'
@@ -38,14 +38,14 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Title title='Blogy Vlogy' mode={mode} togglemode={togglemode} />
         <Alert alert={alert} />
 
         <Routes>
           <Route exact path="/about" element={<Acordian mode={mode} />}>
           </Route>
-          <Route exact path='/'
+          <Route exact path='/blogyVlogy'
             element={<Sign heading='Enter the text here' mode={mode} showalert={showalert} />}>
           </Route>
         </Routes>
@@ -58,7 +58,7 @@ function App() {
 
 
 
-      </BrowserRouter>
+      </Router>
     </>
 
   );
